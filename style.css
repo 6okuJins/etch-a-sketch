@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container {
+    display: grid;
+    height: min(50vh,50vw);
+    width: min(50vh,50vw);
+    grid-template-columns: repeat(16, minmax(20px,auto));
+    grid-template-rows: repeat(16, minmax(20px, auto));
+}
+
+.grid-element {
+    background-color: white;
+}
