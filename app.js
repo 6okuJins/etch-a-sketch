@@ -5,7 +5,8 @@ const body = document.querySelector('body');
 const gridContainer = document.querySelector('.grid-container');
 const colorPicker = document.querySelector('#color-picker');
 const rangeSlider = document.querySelector('#size');
-const clear = document.querySelector('#clear')
+const clear = document.querySelector('#clear');
+const sizeLabel = document.querySelector('#size-label');
 
 colorPicker.addEventListener('change', () => {currentColor = colorPicker.value});
 clear.addEventListener('click', gridClear);
@@ -31,12 +32,14 @@ function gridClear() {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
+    gridSetup();
 }
 rangeSlider.addEventListener('click', () => {
     if (rangeSlider.valueAsNumber != currentSize) {
         currentSize = rangeSlider.valueAsNumber;
         gridClear();
-        gridSetup();
+        sizeLabel.textContent = `Size: ${currentSize} x ${currentSize}`;
+
     }
 });
 
