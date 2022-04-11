@@ -5,8 +5,10 @@ const body = document.querySelector('body');
 const gridContainer = document.querySelector('.grid-container');
 const colorPicker = document.querySelector('#color-picker');
 const rangeSlider = document.querySelector('#size');
+const clear = document.querySelector('#clear')
 
 colorPicker.addEventListener('change', () => {currentColor = colorPicker.value});
+clear.addEventListener('click', gridClear);
 
 let drag = false;
 document.addEventListener("mousedown", () => drag = true);
